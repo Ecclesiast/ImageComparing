@@ -40,7 +40,6 @@ def checkModification(path):
         for idx1 in range(len(onlyfiles) - idx):
             if onlyfiles[idx] != onlyfiles[idx1 + idx]:
                 im_modif = Image.open(join(path, onlyfiles[idx1 + idx]))
-                #print(hamming_distance(dhash(im), dhash(im_modif)))
                 if dhash(im) == dhash(im_modif) or hamming_distance(dhash(im), dhash(im_modif)) < 12:
                     print("{}, {}".format(onlyfiles[idx], onlyfiles[idx + idx1]))
 
